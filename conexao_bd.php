@@ -20,7 +20,7 @@ function executarComando($sql) {
     if (mysqli_query($conn, $sql)) {
         return true;
     } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($GLOBALS['$conn']);
+        //echo "Error: " . $sql . "<br>" . mysqli_error($GLOBALS['$conn']);
         return false;
     }
 }
@@ -31,7 +31,7 @@ function executarComandoRetornarID($sql) {
         $ultimo_id = mysqli_insert_id($conn);
         return $ultimo_id;
     } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        //echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         return false;
     }
 }
@@ -43,7 +43,7 @@ function retornarDados($sql) {
     if (mysqli_num_rows($resultado) > 0) {
         return $resultado;
     } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        //echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         return false;
     }
 }

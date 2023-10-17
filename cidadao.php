@@ -122,7 +122,26 @@ class cidadao {
     
     function fazerLogin()
     {
-        $sql = "SELECT * FROM cidadao WHERE login = '$this->login' AND senha = '$this->senha'";
+        $sql = "SELECT * FROM cidadao WHERE login = '$this->login' AND senha = '$this->senha' AND status='Ativo'";
+        
+        $resultado = retornarDados($sql);
+        
+        
+        if (mysqli_num_rows($resultado) > 0)
+        {
+            
+            
+           return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
+    function exibirMeusDados()
+    {
+        $sql = "SELECT * FROM cidadao WHERE login = '$this->login'";
         
         $resultado = retornarDados($sql);
         
@@ -135,6 +154,7 @@ class cidadao {
             $this->nome = $linha["nome"];
             $this->email = $linha["email"];
             $this->logradouro = $linha["logradouro"];
+            $this->celular = $linha["celular"];
             $this->bairro = $linha["bairro"];
             $this->cidade = $linha["cidade"];
             $this->login = $linha["login"];
@@ -148,6 +168,7 @@ class cidadao {
             return false;
         }
     }
+    
     function trocarSenha()
     {
         $sql = "UPDATE cidadao SET senha = '$this->senha' WHERE login = '$this->login'";
@@ -161,9 +182,12 @@ class cidadao {
         $sql .= " celular = '$this->celular', logradouro = '$this->logradouro', ";
         $sql .= " bairro = '$this->bairro', cidade = '$this->cidade', senha = '$this->senha' WHERE login = '$this->login' ";
            
+        
         return executarComando($sql);     
              
     }
+    
+    
     
     
 }

@@ -47,13 +47,13 @@ window.addEventListener("load", () => {
                 <a class="navbar-link">
 
                     <!-- AQUI MOSTRAR O USUÁRIO QUE ESTÁ LOGADO -->
-                    <div class="is-user-name"><span>Regilan Meira</span></div>
+                    <div class="is-user-name"><span><?php echo $_SESSION["login_cidadao"]?></span></div>
                     <!------------------------------------------->
                 </a>
 
             </div>
 
-            <a title="Sair" class="navbar-item desktop-icon-only">
+            <a href="index.php" title="Sair" class="navbar-item desktop-icon-only">
                 <span class="icon"><i class="mdi mdi-logout"></i></span>
                 <span>Sair</span>
             </a>

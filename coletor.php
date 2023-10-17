@@ -112,26 +112,60 @@ class coletor {
 
     //Métodos
     
+    //Métodos
+   
     function autoCadastrar()
     {
-        echo "Sua conta foi criado";
+        $sql = "INSERT INTO coletor(nome,email,celular,logradouro,bairro,cidade,login,senha,status,tipoPessoa) ";
+        $sql .= " VALUES('$this->nome','$this->email','$this->celular','$this->logradouro','$this->bairro','$this->cidade','$this->login','$this->senha','$this->status','$this->tipoPessoa') ";
+        
+        return executarComando($sql);
     }
     
     function fazerLogin()
     {
+        $sql = "SELECT * FROM coletor WHERE login = '$this->login' AND senha = '$this->senha'";
         
+        $resultado = retornarDados($sql);
+        
+        if (mysqli_num_rows($resultado) > 0)
+        {
+            $linha = mysqli_fetch_assoc($resultado);
+        
+            $this->nome = $linha["nome"];
+            $this->email = $linha["email"];
+            $this->celular = $linha["celular"];
+            $this->logradouro = $linha["logradouro"];
+            $this->bairro = $linha["bairro"];
+            $this->cidade = $linha["cidade"];
+            $this->login = $linha["login"];
+            $this->senha = $linha["senha"];
+            $this->status = $linha["status"];
+            $this ->tipoPessoa = $linha["tipoPessoa"];
+            
+           return true;
+        }
+        else
+        {
+            return false;
+        }
     }
     
-    function escolhaDenuncia()
+    //Incluir o atualizar com todos os dados do coleteor
+    function removerConta()
     {
-        
+       $sql = "UPDATE coletor SET status = 'Inativo' WHERE login = '$this->login'";
+        return executarComando($sql);
     }
     
-    function alterarStatus()
+     function trocarSenha()
     {
-
+        $sql = "UPDATE coletor SET senha = '$this->senha' WHERE login = '$this->login'";
+    
+        return executarComando($sql);
     }
-
+   
+   
     function observacaoDenuncia()
     {
 

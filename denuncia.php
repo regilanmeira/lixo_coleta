@@ -1,4 +1,5 @@
 <?php
+include 'conexao_bd.php';
 class denuncia {
     //atributos
     private $idDenuncia;
@@ -97,24 +98,89 @@ class denuncia {
         $this->status = $status;
     }
 
-        
-    
-    
-    //Métodos
+     //Métodos
     
     function fazerDenuncia()
     {
-       
+       $sql = "INSERT INTO denuncia(loginCidadao,dataOcorrido,descricaoDenuncia,descricaoLugar,foto,latitude,longitude,status) ";
+       $sql .= "VALUES ('$this->loginCidadao','$this->dataOcorrido','$this->descricaoDenuncia','$this->descricaoLugar','$this->foto','$this->latitude','$this->longitude','$this->status') ";
+    
+       return executarComando($sql);
     }
     
     function removerDenuncia()
     {
+        $sql = "DELETE FROM denuncia WHERE idDenuncia='$this->idDenuncia'";
         
+        return executarComando($sql);
     }
 
     function mudarStatus()
     {
-
+        $sql = "UPDATE denuncia SET status='$this->status' WHERE idDenuncia='$this->idDenuncia'";
+        
+        return executarComando($sql);
     }
+    
+    //OBSERVAÇÃO:
+    //Atualizar todas as colunas de DENUNCIA
+    function atualizarDenuncia()
+    {
+        $sql = "UPDATE denuncia SET descricaoDenuncia = '$this->descricaoDenuncia', ";
+        $sql .= " descricaoLugar = '$this->descricaoLugar', ";
+        
+        return executarComando($sql);
+    }
+    
+     function mostrarDenuncias()
+    {
+        $sql = "SELECT * FROM denuncia WHERE status = '$this->status' ORDER BY idDenuncia DESC ";
+        
+        $resultado = retornarDados($sql);
+        
+       return $resultado;
+    }
+    
+    function mostrarDadosDenuncia()
+    {
+        $sql = "SELECT * FROM denuncia WHERE idDenuncia = '$this->idDenuncia' ";
+        
+        $resultado = retornarDados($sql);
+        
+        
+        
+         if (mysqli_num_rows($resultado) > 0)
+        {
+            $linha = mysqli_fetch_assoc($resultado);
+        
+            $this->dataOcorrido = $linha["dataOcorrido"];
+            $this->descricaoDenuncia = $linha["descricaoDenuncia"];
+            $this->descricaoLugar = $linha["descricaoLugar"];
+            $this->foto = $linha["foto"];
+            $this->latitude = $linha["latitude"];
+            $this->longitude = $linha["longitude"];
+            $this->loginCidadao = $linha["loginCidadao"];
+            $this->status = $linha["status"];
+          
+            
+           return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
+    function exibirDenunciasCidadao()
+    {
+        $sql = "SELECT * FROM denuncia WHERE loginCidadao = '$this->loginCidadao' ORDER BY IdDenuncia DESC";
+        
+        $resultado = retornarDados($sql);
+        
+        return $resultado;
+        
+    }
+    
+    
 }  
   

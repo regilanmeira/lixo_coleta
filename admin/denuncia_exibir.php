@@ -9,13 +9,13 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <?php include 'cabecalho.php'; ?>
-       
+
     </head>
     <body>
         <div id="app">
             <?php
-            include './menu_superior.php';
-            include './menu_lateral.php';
+            include 'menu_superior.php';
+            include 'menu_lateral.php';
             ?>
 
             <!------ SESSÃO QUE MOSTRA A PÁGINA ONDE O USUÁRIO ESTÁ ------>
@@ -23,7 +23,8 @@ and open the template in the editor.
                 <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
                     <ul>
                         <li>Cadê o lixo que estava aqui?</li>
-                        <li>Exibir denúncias</li>
+                        <li>Módulo Admin</li>
+                        <li>Exibir Denúncias</li>
                     </ul>
 
                 </div>
@@ -31,16 +32,71 @@ and open the template in the editor.
             <!---------------------------------------------------------->
 
             <!----------------- AQUI O CONTEÚDO DA PÁGINA -------------->
+
+            <?php 
+            include "../denuncia.php";
+            
+            
+            $denuncia = new denuncia();
+            $denuncia->setStatus("Disponível");
+            
+            
+            $resultado = $denuncia->mostrarDenuncias();
+                    
+            
+            ?>
+            
             <div class="card-content">
                 
+                <table class="table-responsive-sm">
+                    <tr>
+                        <!--<th>ID</th>-->
+                        <th>Local</th>
+                        <!--<th>Descrição da denúncia</th>-->
+                        <th>Data</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+                        
+              
+                        
+            <?php 
+            
+            while ($linha = mysqli_fetch_assoc($resultado))
+            {
+                $id = $linha["IdDenuncia"];
+                $local = $linha["descricaoLugar"];
+                $denuncia = $linha["descricaoDenuncia"];
+                $data = $linha["dataOcorrido"];
                 
+                $dataformatada = new DateTime($data);
+                
+                
+                $status = $linha["status"];
+  
+            ?>
+            
+            <tr>
+                <!-- <td><?php echo $id; ?></td>-->
+                <td><?php echo $local; ?></td>
+                <!--<td><?php echo $denuncia; ?></td>-->
+                <td><?php echo $dataformatada->format('d/m/Y'); ?></td>
+                <td><?php echo $status; ?></td>
+                <td><a href=""><i class="fa-solid fa-eye"></i></a></td>
+            </tr>
 
+            <?php 
+            
+            }
+            
+            ?>
+            
+                </table>
             </div>
 
+                <!---------------------------------------------------------->
 
-            <!---------------------------------------------------------->
-
-            <?php include 'rodape.php' ?>
+    <?php include 'rodape.php' ?>
 
         </div>
     </body>

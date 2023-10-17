@@ -102,17 +102,17 @@ sup {
 
 table {
     text-indent: 0;
-    border: 2px solid var(--cor-border);
+    /* border: 1px solid var(--cor-border); */
 }
 
 th {
     text-indent: 0;
-    border: 2px solid var(--cor-border);
+    border: 1px solid var(--cor-border);
 }
 
 td {
     text-indent: 0;
-    border: 2px solid var(--cor-border);
+    border: 1px solid var(--cor-border);
 }
 
 button,

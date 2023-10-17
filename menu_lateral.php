@@ -16,9 +16,9 @@
                     
                     <p class="menu-label">Menu</p>
                     
-                      
+                    
                         <li class="--set-active-forms-html">
-                            <a href="">
+                            <a href="denuncia_inserir.php">
                                 <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>
                                 <span class="menu-item-label">Realizar denúncias</span>
                             </a>
@@ -33,12 +33,18 @@
                         
                                                 
                           <li class="--set-active-profile-html">
-                            <a href="">
+                              <a href="cidadao_mostrar_dados.php">
                                 <span class="icon"><i class="mdi mdi-account-circle"></i></span>
                                 <span class="menu-item-label">Meus dados</span>
                             </a>
                         </li>
                         
+                           <li class="--set-active-profile-html">
+                               <a href="index.php">
+                                <span class="icon"><i class="mdi mdi-logout"></i></span>
+                                <span class="menu-item-label">Sair</span>
+                            </a>
+                        </li>
                         
                     
                     

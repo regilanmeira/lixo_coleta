@@ -39,3 +39,7 @@
             gtag('js', new Date());
             gtag('config', 'UA-130795909-1');
         </script>
+        
+            <!-- IMAGENS / ICONS -->
+        <script src="https://kit.fontawesome.com/93b56ca915.js" crossorigin="anonymous"></script>
+        

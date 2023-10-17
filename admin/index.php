@@ -11,6 +11,7 @@
                     <ul>
                         <li><b>Cadê o lixo que estava aqui?</b></li>
 
+                         <li><b>Módulo Admin</b></li>
                         <!-- AQUI COLOCAR O NOME DA PÁGINA QUE VOCÊ ESTÁ DESENVOLVENDO -->
                         <li>Acessar</li>
                     </ul>

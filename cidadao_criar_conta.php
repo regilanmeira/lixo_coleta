@@ -31,7 +31,7 @@
                     </header>
                     <div class="card-content">
                         <!-- AQUI COMEÇA O FORMULÁRIO -->
-                        <form name="" action="" method="post">   
+                        <form name="" action="cidadao_criar_conta_back.php" method="post">   
             <div class="field">
                 <label class="label">Nome completo</label>
 

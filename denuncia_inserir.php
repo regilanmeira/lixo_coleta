@@ -1,23 +1,25 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <!--
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to edit this template
 -->
-<?php session_start();?>
+
 <html>
     <head>
         <meta charset="UTF-8">
         <?php include './cabecalho.php' ?>
+
+        <script src="localizacao.js"></script>
     </head>
-    <body>
+    <body onload="getLocation();">
         <div id="app">
-        <?php
-        include './menu_superior.php';
-        include './menu_lateral.php';
-        
-        ?>
-            
-        <!------ SESSÃO QUE MOSTRA A PÁGINA ONDE O USUÁRIO ESTÁ ------>
+            <?php
+            include './menu_superior.php';
+            include './menu_lateral.php';
+            ?>
+
+            <!------ SESSÃO QUE MOSTRA A PÁGINA ONDE O USUÁRIO ESTÁ ------>
             <section class="is-title-bar">
                 <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
                     <ul>
@@ -27,7 +29,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
                 </div>
             </section>
             <!---------------------------------------------------------->    
-            
+
             <!----------------- AQUI O CONTEÚDO DA PÁGINA -------------->
 
             <!-- INICIO DA SEÇÃO PRINCIPAL DA PÁGINA -->
@@ -39,47 +41,84 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
                             <!-- NOME DO FORMULÁRIO -->
                             Denúncia
                         </p>
+
+
                     </header>
-                 
-                 <!---------  AQUI COMEÇA UM CAMPO DO FORMULÁRIO ------------->
-                 <form name="denuncia_inserir" method="POST">
-   
+
+                    <!---------  AQUI COMEÇA UM CAMPO DO FORMULÁRIO ------------->
+                    <form enctype="multipart/form-data" name="denuncia_inserir" action="denuncia_inserir_salvar.php" method="POST">
+
+                        <div class="field space">
+                            <input class="check" checked="checked" type="checkbox" value="gps" name="ckUsarGPS"/> Desejo usar minhas coordenadas geográficas (posição) atuais como local onde encontra-se o descarte de lixo denunciado. 
+                        </div> 
+
+
+                        <div class="field space">
+                            <label  class="label" for="descricaoLugar">Descrição do local</label>          
+                            <textarea class="textarea" placeholder="Descreva a localidade" name="txtDescricaoLugar"></textarea>                    
+                        </div> 
+
+
                         <div class="field">
-                            <label class="label">Descrição da denúncia</label>
+
+                            <input type="hidden" class="input" name="txtLatitude" >
+                            <input type="hidden" class="input" name="txtLongitude" >
+                        </div>
+
+                        <div class="field">
+                            <label class="label">Relate seu problema</label>
 
                             <div class="control">
-                                <textarea name="txtDescricao" class="input" type="text" placeholder="" required="">
-</textarea>
+                                <textarea class="textarea" required="" name="txtDescricaoDenuncia"></textarea>
                             </div>
-                            <p class="help">
-                                Este campo é de preenchimento obrigatório.
-                            </p>
                         </div>
-                     
-                        
+
+                        <div class="field">
+                            <label class="label">Data do ocorrido</label>
+
+                            <div class="control">
+                                <input type="date" class="input" name="txtDataOcorrido" value="<?php echo date("Y-m-d"); ?>">
+                            </div>
+                        </div>
+
+
+                        <div class="field">
+                            <label class="label">Envie uma foto do local</label>
+
+                           
+                        </div>
+
+                        <div class="field file">
+                            <label class="upload control"></label>
+
+
+                            <div class="field-body">
+                                <div class="field file">
+                                    <label>
+
+                                        <input class="button-confirm" name="pic" type="file" accept="image/*" >
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="field grouped">
                             <div class="control">
-                                <button type="submit" class="button green">
-                                    Enviar
+                                <button type="submit" class="button green" name="">
+                                    Fazer denuncia
                                 </button>
                             </div>
-                            
-                           
-                            
-                
-                            
                         </div>
-                        </div>
-                        
-                         
 
-             </form>    
+
+
+                    </form>    
                 </div>
             </section> 
-            
+
             <!---------------------------------------------------------->
             <?php include 'rodape.php' ?>
-            
+
         </div>
     </body>
 </html>

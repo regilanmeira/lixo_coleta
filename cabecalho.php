@@ -29,6 +29,10 @@
         <meta property="twitter:image:width" content="1920">
         <meta property="twitter:image:height" content="960">
 
+        <!-- IMAGENS / ICONS -->
+        <script src="https://kit.fontawesome.com/93b56ca915.js" crossorigin="anonymous"></script>
+        
+        
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130795909-1"></script>
         <script>
@@ -39,3 +43,17 @@
             gtag('js', new Date());
             gtag('config', 'UA-130795909-1');
         </script>
+        
+        <!-- REFERENCIAS DO BOOTSTRP 
+        
+        <link href="bs5/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script src="bs5/js/bootstrap.min.js" type="text/javascript"></script>
+        -->
+        
+        <!-- Desativar erros -->
+<?php
+
+error_reporting(0);
+
+
+?>
