@@ -24,7 +24,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
                 <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
                     <ul>
                         <li>Cadê o lixo que estava aqui?</li>
-                        <li>Fazer denúncia</li>
+                        <li>Realizar denúncia</li>
                     </ul>
                 </div>
             </section>
@@ -34,12 +34,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
 
             <!-- INICIO DA SEÇÃO PRINCIPAL DA PÁGINA -->
             <section class="section main-section">
-                <div class="card mb-6">
+                
                     <header class="card-header">
                         <p class="card-header-title">
                             <span class="icon"><i class="mdi mdi-ballot"></i></span>
                             <!-- NOME DO FORMULÁRIO -->
-                            Denúncia
+                            Informe os dados da denúncia
                         </p>
 
 
@@ -105,15 +105,26 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
                         <div class="field grouped">
                             <div class="control">
                                 <button type="submit" class="button green" name="">
-                                    Fazer denuncia
+                                    Enviar
                                 </button>
                             </div>
                         </div>
 
+                        <div class="field grouped">
+                        <div class="control">
+                            <a href="denuncia_exibir.php">
+                            <button type="button" class="button" name="">
+                                Voltar
+                            </button>
+                            </a>
+
+                        </div>
+                    </div>
+
 
 
                     </form>    
-                </div>
+               
             </section> 
 
             <!---------------------------------------------------------->

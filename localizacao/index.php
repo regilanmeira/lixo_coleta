@@ -8,7 +8,7 @@
     <script src="localizacao.js"></script>
     <script src="js/bootstrap.bundle.js"></script>
 
-    <script src="localizacaoAPI.js"></script>
+    <!-- <script src="localizacaoAPI.js"></script>-->
     <style>
         *
         {

@@ -85,7 +85,8 @@
                                         
                                     } else {
                                         ?>
-                                <p style="color:#ff3300;font-weight: bold;text-transform: uppercase">
+                                <br />
+                                <p style="color:#ff3300;font-weight: bold;">
                                     Verifique se o login e senha estão corretos para
                                     acessar o sistema ou se você ainda é um usuário ativo.
                                 </p>
