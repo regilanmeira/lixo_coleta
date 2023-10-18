@@ -9,7 +9,7 @@
     </head>
     <body>
         
-
+<h1> Nome da dupla: Ikaro e Crystian </h1>
         <div id="app">
             <!------ SEÇÃO QUE MOSTRA A PÁGINA ONDE O USUÁRIO ESTÁ ------>
             <section class="is-title-bar">
