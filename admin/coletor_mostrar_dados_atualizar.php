@@ -8,13 +8,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
 <html>
     <head>
         <meta charset="UTF-8">
-        <?php include './cabecalho.php' ?>
+        <?php include '../cabecalho.php' ?>
     </head>
     <body>
         <div id="app">
             <?php
-            include './menu_superior.php';
-            include './menu_lateral.php';
+            include '../menu_superior.php';
+            include 'menu_lateral.php';
             ?>
 
             <!------ SESSÃO QUE MOSTRA A PÁGINA ONDE O USUÁRIO ESTÁ ------>
@@ -42,33 +42,34 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
                     </header>
 
                     <!---------  AQUI COMEÇA UM CAMPO DO FORMULÁRIO ------------->
-                    <form action="denuncia_exibir.php" method="POST">
+                    <form action="exibir_denuncias.php" method="POST">
 
                         <?php
-                        include "./cidadao.php";
+                        include "../coletor.php";
 
                         $bairro = $_POST["txtBairro"];
                         $celular = $_POST["txtCelular"];
                         $cidade = $_POST["txtCidade"];
                         $email = $_POST["txtEmail"];
-                        
                         $logradouro = $_POST["txtLogradouro"];
                         $nome = $_POST["txtNome"];
                         $senha = $_POST["txtSenha"];
+                        $tipoPessoa = $_POST["txtTipoPessoa"];
                         
                         
-                        $cidadao = new cidadao();
-                        $cidadao->setBairro($bairro);
-                        $cidadao->setCelular($celular);
-                        $cidadao->setCidade($cidade);
-                        $cidadao->setEmail($email);
-                        $cidadao->setLogradouro($logradouro);
-                        $cidadao->setNome($nome);
-                        $cidadao->setSenha($senha);
-                        $cidadao->setLogin($_SESSION["login"]);
+                        $coletor= new coletor();
+                        $coletor->setBairro($bairro);
+                        $coletor->setCelular($celular);
+                        $coletor->setCidade($cidade);
+                        $coletor->setEmail($email);
+                        $coletor->setLogradouro($logradouro);
+                        $coletor->setNome($nome);
+                        $coletor->setSenha($senha);
+                        $coletor->setTipoPessoa($tipoPessoa);
+                        $coletor->setLogin($_SESSION["login"]);
                         
                         
-                        if ($cidadao->atualizarDados() == true)
+                        if ($coletor->atualizarDados() == true)
                         {
                             echo "<h1>Seus dados foram atualizados!</h1>";
                         }
@@ -100,7 +101,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
             </section> 
 
             <!---------------------------------------------------------->
-<?php include 'rodape.php' ?>
+<?php include '../rodape.php' ?>
 
         </div>
     </body>

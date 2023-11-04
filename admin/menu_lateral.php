@@ -1,3 +1,10 @@
+
+
+<style>
+   li
+   {list-style-type: none;
+   margin-left: 2%;}
+</style>
 <!------------------------  MENU DA PARTE SUPERIOR ------------------>
 <!------------------------ INICIO DO MENU LATERAL ----------------->
             <aside id="menu-lateral" class="aside is-placed-left is-expanded">
@@ -9,20 +16,24 @@
                 <div class="menu is-menu-main">
                     
                     <p class="menu-label">Menu</p>
-                    <ul class="menu-list">
-                      
-                       
-                      
-                        <li class="--set-active-tables-html">
+                   
+                        <li class="--set-active-forms-html">
                             <a href="denuncia_exibir.php">
-                                <span class="icon"><i class="mdi mdi-table"></i></span>
+                                <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>
                                 <span class="menu-item-label">Exibir denúncias</span>
+                            </a>
+                        </li>
+
+                        <li class="--set-active-tables-html">
+                            <a href="denuncia_filtrar.php">
+                                <span class="icon"><i class="mdi mdi-table"></i></span>
+                                <span class="menu-item-label">Filtrar denúncias</span>
                             </a>
                         </li>
                         
                                                 
                           <li class="--set-active-profile-html">
-                            <a href="">
+                              <a href="coletor_mostrar_dados.php">
                                 <span class="icon"><i class="mdi mdi-account-circle"></i></span>
                                 <span class="menu-item-label">Meus dados</span>
                             </a>
@@ -35,7 +46,7 @@
                             </a>
                         
                         
-                    </ul>
+                   
                     
                 </div>
             </aside>

@@ -1,5 +1,5 @@
 <?php
-include 'conexao_bd.php';
+include_once 'conexao_bd.php';
 class denuncia {
     //atributos
     private $idDenuncia;
@@ -143,9 +143,21 @@ class denuncia {
         return executarComando($sql);
     }
     
-     function mostrarDenuncias()
+    function mostrarDenunciasComFiltro()
     {
-        $sql = "SELECT * FROM denuncia WHERE status = '$this->status' ORDER BY idDenuncia DESC ";
+        $sql = "SELECT * FROM denuncia WHERE status = '$this->status' AND classificacao = '$this->classificacao'  ORDER BY idDenuncia DESC ";
+        
+       
+
+        $resultado = retornarDados($sql);
+        
+       return $resultado;
+    }
+
+    function mostrarTodasDenuncias()
+    {
+        $sql = "SELECT * FROM denuncia ORDER BY idDenuncia DESC ";
+        
         
         $resultado = retornarDados($sql);
         

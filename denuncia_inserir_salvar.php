@@ -65,8 +65,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
 
 
 
-                    $login_cidadao = $_SESSION["login_cidadao"];
-                    $status = "Disponível";
+                    $login_cidadao = $_SESSION["login"];
+                    $status = "Pendente";
 
 
                     // -------- ENVIO DE IMAGEM PARA O SERVIDOR

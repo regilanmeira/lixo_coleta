@@ -9,7 +9,7 @@ and open the template in the editor.
 
 <head>
     <meta charset="UTF-8">
-    <?php include 'cabecalho.php'; ?>
+    <?php include '../cabecalho.php'; ?>
 
 </head>
 
@@ -25,7 +25,7 @@ and open the template in the editor.
             <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
                 <ul>
                     <li>Cadê o lixo que estava aqui?</li>
-                    <li>Minhas denúncias</li>
+                    <li>Denúncias </li>
                 </ul>
 
             </div>
@@ -34,22 +34,35 @@ and open the template in the editor.
 
         <!----------------- AQUI O CONTEÚDO DA PÁGINA -------------->
 
-        <?php
-        include "./denuncia.php";
-        $login_cidadao = $_SESSION["login"];
-
-        $denuncia = new denuncia();
-
-        $denuncia->setLoginCidadao($login_cidadao);
-
-        $resultado = $denuncia->exibirDenunciasCidadao();
 
 
-        ?>
 
-        <section class="section main-section">
 
-            
+        <form action="denuncia_exibir.php" method="post">
+            <?php
+            include "../denuncia.php";
+
+
+
+            $denuncia = new denuncia();
+
+
+
+        $status = $_POST["selectStatus"];
+        $classificacao = $_POST["selectClassificacao"];
+
+            $denuncia->setStatus($status);
+            $denuncia->setClassificacao($classificacao);
+
+            $resultado = $denuncia->mostrarDenunciasComFiltro();
+
+
+            ?>
+
+            <div class="card-content">
+
+                
+
 
                 <table class="table-pagination">
                     <tr>
@@ -94,8 +107,20 @@ and open the template in the editor.
                     ?>
 
                 </table>
-           
-        </section>
+
+                <br />
+                <div class="field grouped">
+                        <div class="control">
+                            <a href="denuncia_filtrar.php">
+                                <button type="button" class="button" name="">
+                                    Voltar
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+            </div>
+
+        </form>
 
         <!---------------------------------------------------------->
 

@@ -1,4 +1,5 @@
 <?php
+include 'conexao_bd.php';
 class coletor {
     //atributos
     private $nome;
@@ -24,7 +25,7 @@ class coletor {
         $this->login = $login;
         $this->senha = $senha;
         $this->status = $status;
-        $this ->tipoPessoa = $tipoPessoa;
+        $this->tipoPessoa = $tipoPessoa;
     }
 
     
@@ -147,6 +148,36 @@ class coletor {
         }
         else
         {
+            return  false;
+        }
+    }
+        function exibirMeusDados()
+    {
+        $sql = "SELECT * FROM coletor WHERE login = '$this->login'";
+        
+        $resultado = retornarDados($sql);
+        
+       
+        
+        if (mysqli_num_rows($resultado) > 0)
+        {
+            $linha = mysqli_fetch_assoc($resultado);
+        
+            $this->nome = $linha["nome"];
+            $this->email = $linha["email"];
+            $this->logradouro = $linha["logradouro"];
+            $this->celular = $linha["celular"];
+            $this->bairro = $linha["bairro"];
+            $this->cidade = $linha["cidade"];
+            $this->login = $linha["login"];
+            $this->senha = $linha["senha"];
+            $this->status = $linha["status"];
+            $this->tipoPessoa = $linha["tipoPessoa"];
+            
+           return true;
+        }
+        else
+        {
             return false;
         }
     }
@@ -165,10 +196,19 @@ class coletor {
         return executarComando($sql);
     }
    
+    function atualizarDados()
+    {
+        $sql = "UPDATE coletor SET nome = '$this->nome', email = '$this->email', ";
+        $sql .= " celular = '$this->celular', logradouro = '$this->logradouro', ";
+        $sql .= " bairro = '$this->bairro', cidade = '$this->cidade', senha = '$this->senha' , tipoPessoa = '$this->tipoPessoa' WHERE login = '$this->login' ";
+           
+        return executarComando($sql);     
+             
+    }
    
     function observacaoDenuncia()
     {
-
+        
     }
   
 }

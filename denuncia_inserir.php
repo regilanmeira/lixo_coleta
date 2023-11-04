@@ -124,7 +124,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
 
                         <div class="field grouped">
                             <div class="control">
-                                <button type="submit" class="button green" name="">
+                                <button type="submit" class="button button-confirm" name="">
                                     Enviar
                                 </button>
                             </div>

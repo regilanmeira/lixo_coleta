@@ -47,7 +47,7 @@ window.addEventListener("load", () => {
                 <a class="navbar-link">
 
                     <!-- AQUI MOSTRAR O USUÁRIO QUE ESTÁ LOGADO -->
-                    <div class="is-user-name"><span><?php echo $_SESSION["login_cidadao"]?></span></div>
+                    <div class="is-user-name"><span><?php echo $_SESSION["login"]?></span></div>
                     <!------------------------------------------->
                 </a>
 

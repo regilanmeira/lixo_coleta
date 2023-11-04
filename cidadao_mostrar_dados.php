@@ -51,7 +51,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
             <?php
             include './cidadao.php';
 
-            $login = $_SESSION["login_cidadao"];
+            $login = $_SESSION["login"];
 
             $cidadao = new cidadao();
             $cidadao->setLogin($login);
@@ -130,7 +130,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
 
                 <div class="field grouped">
                     <div class="control">
-                        <button type="submit" class="button green" name="">
+                        <button type="submit" class="button button-confirm" name="">
                             Atualizar
                         </button>
                     </div>

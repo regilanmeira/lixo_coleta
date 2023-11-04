@@ -1,7 +1,8 @@
 <html class="form-screen">
     <head>
         <meta charset="UTF-8">
-        <?php include 'cabecalho.php' ?>
+        <?php include '../cabecalho.php' ;
+        $_SESSION["login"] = "";?>
     </head>
     <body>
         <div id="app">
@@ -31,12 +32,12 @@
                     </header>
                     <div class="card-content">
                         <!-- AQUI COMEÇA O FORMULÁRIO -->
-                        <form method="POST" action="" name="">
+                        <form method="POST" action="coletor_fazer_login.php" name="">
 
                             <div class="field spaced">
                                 <label class="label">Login</label>
                                 <div class="control icons-left">
-                                    <input class="input" type="text" name="login" placeholder="Seu login de acesso" autocomplete="username">
+                                    <input class="input" type="text" name="txtLogin" placeholder="Seu login de acesso" autocomplete="username">
                                     <span class="icon is-small left"><i class="mdi mdi-account"></i></span>
                                 </div>
                                 <p class="help">
@@ -66,7 +67,7 @@
                        
                         </form>
                     </div>
-                    <?php include 'rodape.php'; ?>
+                    <?php include '../rodape.php'; ?>
                 </div>
             </section>
        </div>

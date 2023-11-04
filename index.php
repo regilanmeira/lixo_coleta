@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <?php
         include 'cabecalho.php';
-        $_SESSION["login_cidadao"] = "";
+        $_SESSION["login"] = "";
         ?>
     </head>
     <body>
@@ -79,7 +79,7 @@
 
                                     if ($cidadao->fazerLogin() == true) {
                                         
-                                        $_SESSION["login_cidadao"] = $login;
+                                        $_SESSION["login"] = $login;
                                         
                                         echo "<script> location.replace('denuncia_exibir.php') </script>";
                                         

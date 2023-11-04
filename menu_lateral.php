@@ -3,7 +3,6 @@
    {list-style-type: none;
    margin-left: 2%;}
 </style>
-
 <!------------------------  MENU DA PARTE SUPERIOR ------------------>
 <!------------------------ INICIO DO MENU LATERAL ----------------->
             <aside id="menu-lateral" class="aside is-placed-left is-expanded">
@@ -15,8 +14,7 @@
                 <div class="menu is-menu-main">
                     
                     <p class="menu-label">Menu</p>
-                    
-                    
+                                        
                         <li class="--set-active-forms-html">
                             <a href="denuncia_inserir.php">
                                 <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>

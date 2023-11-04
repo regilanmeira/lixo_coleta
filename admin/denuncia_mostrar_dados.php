@@ -9,7 +9,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
 
 <head>
     <meta charset="UTF-8">
-    <?php include './cabecalho.php' ?>
+    <?php include '../cabecalho.php' ?>
 
     <script src="localizacao.js"></script>
 </head>
@@ -17,8 +17,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
 <body onload="getLocation();">
     <div id="app">
         <?php
-        include './menu_superior.php';
-        include './menu_lateral.php';
+        include '../menu_superior.php';
+        include 'menu_lateral.php';
         ?>
 
         <!------ SESSÃO QUE MOSTRA A PÁGINA ONDE O USUÁRIO ESTÁ ------>
@@ -51,7 +51,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
                 <form enctype="multipart/form-data" action="denuncia_mostrar_dados_remover.php?idDenuncia=<?php echo $_GET["idDenuncia"] ?>" method="POST">
 
                     <?php
-                    include './denuncia.php';
+                    include '../denuncia.php';
 
                     $idDenuncia = $_GET["idDenuncia"];
 
@@ -119,15 +119,24 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
                     </div>
 
                     <div class="field">
-                        <img src="<?php echo $denuncia->getFoto(); ?>" />
+                        <img src="<?php echo "../" . $denuncia->getFoto(); ?>" />
 
 
                     </div>
 
+                    <div class="field grouped">
+                            <div class="control">
+                                <button type="submit" class="button button-confirm" name="">
+                                    Analisar
+                                </button>
+                            </div>
+                        </div>
+
+
 
                     <!-- EXIBIÇÃO DO HISTÓRICO DA DENÚNCIA -->
                     <div class="field">
-                        <label class="label">Resultado da denúncia</label>
+                        <label class="label">Histórico da denúncia</label>
 
 
                     </div>
@@ -148,7 +157,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
 
                             <?php
 
-                            include "./denuncia_historico.php";
+                            include "../denuncia_historico.php";
 
 
                             $denunciaHistorico = new denuncia_historico();
@@ -187,48 +196,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
                     </div>
 
 
-                    <?php
+                    
 
-                    if ($denuncia->getStatus() == "Pendente") {
+                    
 
-                    ?>
+                        
+                   
 
-                        <div class="field grouped">
-                            <div class="control">
-                                <button type="submit" class="button button-danger" name="">
-                                    Remover denúncia
-                                </button>
-                            </div>
-                        </div>
-
-                    <?php
-
-                    } else {
-
-                    ?>
-
-
-                        <div class="field grouped">
-                            <div class="control">
-                                <button disabled="disabled" type="submit" class="button button-danger" name="">
-                                    Remover denúncia
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <label class="label ">Esta denúncia não poderá ser removida pois já está em análise/encaminhamento.</label>
-
-
-                        </div>
+                    
 
 
 
-                    <?php
-
-                    }
-
-                    ?>
+                 
 
                     <div class="field grouped">
                         <div class="control">
@@ -247,7 +226,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
         </section>
 
         <!---------------------------------------------------------->
-        <?php include 'rodape.php' ?>
+        <?php include '../rodape.php' ?>
 
     </div>
 </body>

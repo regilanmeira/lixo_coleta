@@ -1,5 +1,3 @@
-
-<?php session_start(); ?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -13,21 +11,20 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        include './cidadao.php';
-        include './cabecalho.php';
+        include '../coletor.php';
         
         $login = $_POST["txtLogin"];
         $senha = $_POST["txtSenha"];
         
-        $cidadao = new cidadao();
+        $coletor = new coletor();
         
-        $cidadao->setLogin($login);
-        $cidadao->setSenha($senha);
+        $coletor->setLogin($login);
+        $coletor->setSenha($senha);
         
         
-        if ($cidadao->fazerLogin() == true)
+        if ($coletor->fazerLogin() == true)
         {
-            
+            session_start();
             $_SESSION["login"] = $login;
             header("Location:denuncia_exibir.php");
             
@@ -37,10 +34,7 @@ and open the template in the editor.
             echo "<h1 class='alert-danger'>Não foi possível fazer o acesso. Verifique o login e senha digitado!</h1>";
         }
         
-       
-        
         
         ?>
-      
     </body>
 </html>
