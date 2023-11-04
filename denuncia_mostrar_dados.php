@@ -105,6 +105,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
                     </div>
 
                     <div class="field">
+                        <label class="label">Classificação</label>
+                        <label>
+                            <?php echo $denuncia->getClassificacao(); ?>
+                        </label>
+
+                    </div>
+
+                    <div class="field">
                         <label class="label">Foto do local</label>
 
 

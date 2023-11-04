@@ -11,9 +11,10 @@ class denuncia {
     private $longitude;
     private $loginCidadao;
     private $status;
+    private $classificacao;
     
     
-    function __construct($dataOcorrido = null, $descricaoDenuncia = null, $descricaoLugar = null, $foto = null, $latitude = null, $longitude = null, $loginCidadao = null, $status = null) {
+    function __construct($dataOcorrido = null, $descricaoDenuncia = null, $descricaoLugar = null, $foto = null, $latitude = null, $longitude = null, $loginCidadao = null, $status = null, $classificacao = null) {
         
         $this->dataOcorrido = $dataOcorrido;
         $this->descricaoDenuncia = $descricaoDenuncia;
@@ -23,6 +24,7 @@ class denuncia {
         $this->longitude = $longitude;
         $this->loginCidadao = $loginCidadao;
         $this->status = $status;
+        $this->classificacao = $classificacao;
     }
 
     
@@ -62,6 +64,11 @@ class denuncia {
         return $this->status;
     }
 
+    function getClassificacao() {
+        return $this->classificacao;
+    }
+
+
     function setIdDenuncia($idDenuncia) {
         $this->idDenuncia = $idDenuncia;
     }
@@ -98,12 +105,16 @@ class denuncia {
         $this->status = $status;
     }
 
+    function setClassificacao($classificacao) {
+        $this->classificacao = $classificacao;
+    }
+   
      //Métodos
     
     function fazerDenuncia()
     {
-       $sql = "INSERT INTO denuncia(loginCidadao,dataOcorrido,descricaoDenuncia,descricaoLugar,foto,latitude,longitude,status) ";
-       $sql .= "VALUES ('$this->loginCidadao','$this->dataOcorrido','$this->descricaoDenuncia','$this->descricaoLugar','$this->foto','$this->latitude','$this->longitude','$this->status') ";
+       $sql = "INSERT INTO denuncia(loginCidadao,dataOcorrido,descricaoDenuncia,descricaoLugar,foto,latitude,longitude,status,classificacao) ";
+       $sql .= "VALUES ('$this->loginCidadao','$this->dataOcorrido','$this->descricaoDenuncia','$this->descricaoLugar','$this->foto','$this->latitude','$this->longitude','$this->status','$this->classificacao') ";
     
        return executarComando($sql);
     }
@@ -161,6 +172,7 @@ class denuncia {
             $this->longitude = $linha["longitude"];
             $this->loginCidadao = $linha["loginCidadao"];
             $this->status = $linha["status"];
+            $this->classificacao = $linha["classificacao"];
           
             
            return true;

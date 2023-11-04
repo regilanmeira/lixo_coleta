@@ -81,6 +81,26 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
                             </div>
                         </div>
 
+                        <div class="field">
+                            <label class="label">Classificacao</label>
+
+                            <div class="control">
+                                <select class="input" name="selectClassificacao">
+                                    <option value="Construção Civil">Construção Civil</option>
+                                    <option value="Doméstico">Doméstico</option>
+                                    <option value="Eletrônico">Eletrônico</option>
+                                    <option value="Plástico">Papel</option>
+                                    <option value="Plástico">Plástico</option>
+                                    <option value="Orgânico">Orgânico</option>
+                                    <option value="Vidro">Vidro</option>
+                                    <option value="Vidro">Outros</option>
+                                    
+                                </select>
+                              
+                            </div>
+                        </div>
+
+
 
                         <div class="field">
                             <label class="label">Envie uma foto do local</label>

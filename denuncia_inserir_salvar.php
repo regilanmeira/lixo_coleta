@@ -52,6 +52,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
                     $dataOcorrido = $_POST["txtDataOcorrido"];
                     $descricaoDenuncia = $_POST["txtDescricaoDenuncia"];
                     $descricaoLugar = $_POST["txtDescricaoLugar"];
+                    $classificacao = $_POST["selectClassificacao"];
 
 
                     if (isset($_POST['ckUsarGPS'])) {
@@ -83,7 +84,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
 
                     // ------------------
 
-                    $denuncia = new denuncia($dataOcorrido, $descricaoDenuncia, $descricaoLugar, $foto, $latitude, $longitude, $login_cidadao, $status);
+                    $denuncia = new denuncia($dataOcorrido, $descricaoDenuncia, $descricaoLugar, $foto, $latitude, $longitude, $login_cidadao, $status,$classificacao);
 
                     if ($denuncia->fazerDenuncia() == true) {
                         echo "<h1>Denuncia inserida no sistema</h1>";
