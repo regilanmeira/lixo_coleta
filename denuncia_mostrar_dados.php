@@ -152,7 +152,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
                             while ($linha = mysqli_fetch_assoc($resultado)) {
 
 
-                                $observacao = $linha["$observacao"];
+                                $observacao = $linha["observacao"];
                                 $data = $linha["dataHistorico"];
                                 $dataformatada = new DateTime($data);
 

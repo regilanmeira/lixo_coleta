@@ -72,7 +72,7 @@ class denuncia_historico {
     
     function gerarHistorico()
     {
-        $sql = "SELECT * FROM denuncia_historico WHERE idDenuncia = '$this->idDenuncia' ORDER BY idDenuncia DESC ";
+        $sql = "SELECT * FROM denuncia_historico WHERE idDenuncia = '$this->idDenuncia' ORDER BY dataHistorico DESC ";
         
         $resultado = retornarDados($sql);
         
