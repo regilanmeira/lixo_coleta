@@ -77,7 +77,7 @@ and open the template in the editor.
                                     <option value="Plástico">Plástico</option>
                                     <option value="Orgânico">Orgânico</option>
                                     <option value="Vidro">Vidro</option>
-                                    <option value="Vidro">Outros</option>
+                                    <option value="Outros">Outros</option>
                                     
                                 </select>
                               

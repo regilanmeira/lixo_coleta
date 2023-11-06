@@ -48,7 +48,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
                 </header>
 
                 <!---------  AQUI COMEÇA UM CAMPO DO FORMULÁRIO ------------->
-                <form enctype="multipart/form-data" action="denuncia_mostrar_dados_remover.php?idDenuncia=<?php echo $_GET["idDenuncia"] ?>" method="POST">
+                <form enctype="multipart/form-data" action="denuncia_analisar.php?idDenuncia=<?php echo $_GET["idDenuncia"] ?>" method="POST">
 
                     <?php
                     include '../denuncia.php';
@@ -131,6 +131,27 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
                                 </button>
                             </div>
                         </div>
+
+
+                        <?php 
+                          if ($denuncia->getLatitude() != "")
+                          {
+
+                         
+                        ?>
+                        <div class="field grouped">
+                            <div class="control">
+                                <a target="_blank" href="https://maps.google.com/?q=<?php echo $denuncia->getLatitude(); ?>,<?php echo $denuncia->getLongitude(); ?>">
+                                    <button type="button" class="button button-confirm" name="">
+                                        Ver no mapa
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <?php 
+                          }
+                        ?>
 
 
 

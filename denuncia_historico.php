@@ -79,5 +79,6 @@ class denuncia_historico {
         return $resultado;
     }
     
+    
   
 }
