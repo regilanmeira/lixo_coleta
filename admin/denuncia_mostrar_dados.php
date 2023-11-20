@@ -147,7 +147,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
                                     </button>
                                 </a>
                             </div>
+                           
                         </div>
+
+
                         
                         <?php 
                           }
@@ -162,6 +165,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
 
                     </div>
 
+                    
                     <div class='field'>
 
                         <table class="table-pagination">
@@ -174,18 +178,25 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
 
                             </tr>
 
+                            
 
-
+                            
                             <?php
+
+
 
                             include "../denuncia_historico.php";
 
-
+                                  
                             $denunciaHistorico = new denuncia_historico();
+
+                            
 
                             $denunciaHistorico->setIdDenuncia($idDenuncia);
 
                             $resultado = $denunciaHistorico->gerarHistorico();
+
+
 
                             while ($linha = mysqli_fetch_assoc($resultado)) {
 

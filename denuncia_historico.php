@@ -1,4 +1,5 @@
 <?php
+include_once 'conexao_bd.php';
 class denuncia_historico {
     //atributos
     private $idHistorico;
@@ -72,13 +73,32 @@ class denuncia_historico {
     
     function gerarHistorico()
     {
-        $sql = "SELECT * FROM denuncia_historico WHERE idDenuncia = '$this->idDenuncia' ORDER BY dataHistorico DESC ";
+        $sql = "SELECT * FROM denuncia_historico WHERE idDenuncia = '$this->idDenuncia' ORDER BY idHistorico DESC ";
         
+       
+
         $resultado = retornarDados($sql);
         
         return $resultado;
     }
     
+    // Adição dos métodos -----------
+    function registrarHistorico(){
+        $sql = "INSERT INTO denuncia_historico(idDenuncia,dataHistorico,status,observacao,loginColetor) ";
+        $sql .= "VALUES ('$this->idDenuncia','$this->dataHistorico','$this->status','$this->observacao','$this->loginColetor') ";
+        
+        
+        return executarComando ($sql);    
+    }
     
+    function alterarStatus(){
+        $sql = "UPDATE denuncia_hisorico SET status = 'inativo' WHERE idHistorico = '$this->idHistorico'";
+        return executarComando ($sql); 
+     }
+
+   
+    //-------------------------------
+     
+    }
+    ?>
   
-}
