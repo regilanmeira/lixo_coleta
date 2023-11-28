@@ -56,7 +56,7 @@ and open the template in the editor.
                         <!--<th>ID</th>-->
                         <th>Local</th>
                         <!--<th>Descrição da denúncia</th>-->
-                        <th>Data</th>
+                        <!-- <th>Data</th> -->
                         <th>Status</th>
                         <th></th>
                     </tr>
@@ -82,7 +82,7 @@ and open the template in the editor.
                             <!-- <td><?php echo $id; ?></td>-->
                             <td><?php echo $local; ?></td>
                             <!--<td><?php echo $denuncia; ?></td>-->
-                            <td><?php echo $dataformatada->format('d/m/Y'); ?></td>
+                            <!-- <td><?php echo $dataformatada->format('d/m/Y'); ?></td>-->
                             <td><?php echo $status; ?></td>
                             <td><a href="denuncia_mostrar_dados.php?idDenuncia=<?php echo $id;  ?>"><i class="fa-solid fa-eye"></i></a></td>
                         </tr>

@@ -103,6 +103,16 @@
                 </div>
             </div>
 
+            <div class="field grouped">
+                        <div class="control">
+                            <a href="index.php">
+                                <button type="button" class="button" name="">
+                                    Voltar
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+
         </form>
                         
                         
