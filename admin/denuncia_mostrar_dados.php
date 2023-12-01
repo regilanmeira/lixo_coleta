@@ -48,7 +48,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
                 </header>
 
                 <!---------  AQUI COMEÇA UM CAMPO DO FORMULÁRIO ------------->
-                <form enctype="multipart/form-data" action="denuncia_analisar.php?idDenuncia=<?php echo $_GET["idDenuncia"] ?>" method="POST">
+                <form enctype="multipart/form-data" action="denuncia_historico_inserir.php?idDenuncia=<?php echo $_GET["idDenuncia"] ?>" method="POST">
 
                     <?php
                     include '../denuncia.php';
@@ -175,6 +175,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
 
                                 <th>Observação</th>
                                 <th>Status</th>
+                                <th>Ações</th>
 
                             </tr>
 
@@ -204,6 +205,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
                                 $observacao = $linha["observacao"];
                                 $data = $linha["dataHistorico"];
                                 $dataformatada = new DateTime($data);
+                                $idHistorico = $linha["idHistorico"];
 
                                 $status = $linha["status"];
 
@@ -215,6 +217,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
                                     <td><?php echo $dataformatada->format('d/m/Y'); ?></td>
                                     <td><?php echo $observacao; ?></td>
                                     <td><?php echo $status; ?></td>
+                                    <td><a href="denuncia_historico_remover.php?idHistorico=<?php echo $idHistorico;  ?>"><i class="fa-solid fa-trash"></i></a></td>
 
                                 </tr>
 

@@ -87,12 +87,15 @@ class denuncia_historico {
         $sql = "INSERT INTO denuncia_historico(idDenuncia,dataHistorico,status,observacao,loginColetor) ";
         $sql .= "VALUES ('$this->idDenuncia','$this->dataHistorico','$this->status','$this->observacao','$this->loginColetor') ";
         
+
         
         return executarComando ($sql);    
     }
     
-    function alterarStatus(){
-        $sql = "UPDATE denuncia_hisorico SET status = 'inativo' WHERE idHistorico = '$this->idHistorico'";
+    function removerHistorico(){
+        $sql = "DELETE FROM denuncia_historico WHERE idHistorico = '$this->idHistorico'";
+
+     
         return executarComando ($sql); 
      }
 
