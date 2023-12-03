@@ -8,6 +8,7 @@
         ?>
     </head>
     <body>
+        <h1>Regilan Meira Siçva</h1>
 
         <div id="app">
             <!------ SEÇÃO QUE MOSTRA A PÁGINA ONDE O USUÁRIO ESTÁ ------>
